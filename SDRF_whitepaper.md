@@ -484,7 +484,7 @@ SDRF is open infrastructure for participant-controlled research.
 
 [^16]: Intel. *Intel® Software Guard Extensions (Intel® SGX)*. https://www.intel.com/content/www/us/en/architecture-and-technology/software-guard-extensions.html
 
-[^17]: AMD. *Confidential Computing with AMD EPYC Processors*. https://www.amd.com/en/products/processors/server/epyc/confidential-computing
+[^17]: AMD. *AMD Infinity Guard (includes Secure Encrypted Virtualization)*. https://www.amd.com/en/products/processors/server/epyc/infinity-guard.html
 
 [^18]: AWS. *Nitro Enclaves Documentation*. https://docs.aws.amazon.com/enclaves/latest/user/nitro-enclave.html
 
