@@ -1,17 +1,9 @@
-\begin{titlepage}
-\thispagestyle{empty}
-\centering
-\vspace*{2.5cm}
-{\LARGE Sovereign Data Research Fabric (SDRF)\par}
-\vspace{0.6cm}
-{\Large A Privacy-First Architecture for Human-Subject Research\par}
-\vspace{2.2cm}
-{\large Patrick Deegan, PhD\par}
-\vspace{0.4cm}
-{\large Version 1.2\par}
-{\large February 17, 2026\par}
-\vfill
-\end{titlepage}
+\begin{center}
+{\Large\bfseries Sovereign Data Research Fabric (SDRF)\par}
+{\large\itshape A Privacy-First Architecture for Human-Subject Research\par}
+\vspace{0.35cm}
+{\small Prepared by Patrick Deegan, PhD | Version 1.2 | February 17, 2026.\par}
+\end{center}
 
 ## Abstract
 
@@ -19,7 +11,7 @@ The Sovereign Data Research Fabric (SDRF) is a privacy-first architecture for hu
 
 Modern studies in consciousness, mental health, aging, and other human-subject domains increasingly rely on rich streams of speech, biometrics, survey responses, and behavioral telemetry. These signals are precisely the data most difficult to collect under current regulatory frameworks. SDRF provides a self-sovereign, privacy-preserving platform that allows researchers to collect and analyze sensitive signals without removing data from participant control. The architecture is modular and decentralized, supporting deployments from pop-up clinics to multi-site longitudinal studies and enabling collaboration without a centralized honeypot of the most intimate data category humans produce.
 
-SDRF defines a standard for a new class of wellness health records that remain participant-controlled while still supporting rigorous research. It is not a clinical system by default, and any clinical use requires full regulatory compliance, institutional oversight, and IRB governance. The specification is written to be compatible with those requirements, and ongoing efforts are aimed at meeting them where clinical deployment is appropriate.
+SDRF defines a standard for a new class of participant-controlled wellness records that remain under participant control while still supporting rigorous research. It is not a clinical system by default, and any clinical use requires full regulatory compliance, institutional oversight, and IRB governance. The specification is written to be compatible with those requirements, and ongoing efforts are aimed at meeting them where clinical deployment is appropriate.
 
 > *Exploding multimodal data and stricter privacy laws have made copy-and-store models unsustainable. Communities urgently need a compute-to-data architecture that unlocks insight without surrendering ownership.*
 
@@ -93,7 +85,7 @@ The shift from copy-and-store to compute-to-data transforms the power dynamic be
 
 | Conventional Approach | SDRF Compute-to-Data |
 |---------------------------|---------------------|
-| Copy-and-store: raw personal health information and biosignals are transferred to a central cloud, forcing participants to relinquish ownership. | Compute-to-vault: data remains in participant-controlled vaults. Only encrypted features or differentially private results leave the vault. Threshold cryptography allows computations without exposing raw data. |
+| Copy-and-store: raw personal health information and biosignals are transferred to a central cloud, forcing participants to relinquish ownership. | Compute-to-data: data remains in participant-controlled vaults. Only encrypted features or differentially private results leave the vault. Threshold cryptography allows computations without exposing raw data. |
 | Static consent: consent is captured as a PDF. Once data is moved, it can be reused indefinitely with limited participant recourse. | Dynamic, machine-readable consent: consent is expressed as a structured manifest specifying rights, obligations, and conditions. Consent can be modified or revoked at any time, immediately halting access. |
 | Privacy tools deployed piecemeal: differential privacy, multiparty computation, and secure enclaves are often ad hoc, available only in well-funded labs. | Integrated privacy stack: differential privacy is applied automatically when data is shared, with clear reporting of what protections were applied. |
 | Silos between domains: wellness, clinical, and research systems operate independently, creating fragmentation. | End-to-end policy fabric: a unified manifest schema handles data management, consent enforcement, and governance across all contexts. |
@@ -352,7 +344,7 @@ Security is also operational. Access logs, attestation records, and key derivati
 
 # XIII. Threat Model and Risk Boundaries
 
-SDRF assumes motivated adversaries and imperfect operators. The system is designed for scenarios where external attackers target centralized stores, where internal misuse is possible, and where the analytics surface itself can leak sensitive information even when raw data never leaves a vault. A core boundary is that results and trained models can encode membership or sensitive attributes, which is why output control must be treated as a first class security property rather than an afterthought.[^33]\textsuperscript{,}[^34] SDRF therefore treats the research pipeline as a disclosure channel, not only the storage layer, and assumes that privacy loss can occur through models and summaries unless constrained.
+SDRF assumes motivated adversaries and imperfect operators. The system is designed for scenarios where external attackers target centralized stores, where internal misuse is possible, and where the analytics surface itself can leak sensitive information even when raw data never leaves a vault. A core boundary is that results and trained models can encode membership or sensitive attributes, which is why output control must be treated as a first-class security property rather than an afterthought.[^33]\textsuperscript{,}[^34] SDRF therefore treats the research pipeline as a disclosure channel, not only the storage layer, and assumes that privacy loss can occur through models and summaries unless constrained.
 
 SDRF also assumes that distributed and federated computation has its own attack surface. In federated learning, a single malicious participant can poison or backdoor a global model and secure aggregation can hide the malicious update from centralized inspection.[^35] In collaborative training, gradients and parameter updates can leak private information about the underlying data, including reconstructions of original samples.[^36] These risks exist even when the data never leaves the participant environment. SDRF does not claim to eliminate them by default; it treats them as explicit design constraints that must be managed through consented analysis types, disclosure controls, and rigorous review of what is released.
 
@@ -362,11 +354,11 @@ SDRF treats data as a governed lifecycle rather than a static artifact. Data is 
 
 # XV. Assurance and Verification
 
-SDRF is designed so that trust can be verified rather than assumed. Critical actions such as consent grants, key derivations, and analysis executions are logged with cryptographic integrity and are auditable by participants and authorized oversight bodies. When confidential compute platforms are used, the system relies on attestation mechanisms so that researchers and participants can verify the code and environment that processed sensitive data before any output is released.[^16]\textsuperscript{,}[^17]\textsuperscript{,}[^18] The governance layer commits to transparent incident reporting and third party review of security controls, because long term scientific credibility depends on demonstrable operational discipline, not only architectural intent.
+SDRF is designed so that trust can be verified rather than assumed. Critical actions such as consent grants, key derivations, and analysis executions are logged with cryptographic integrity and are auditable by participants and authorized oversight bodies. When confidential compute platforms are used, the system relies on attestation mechanisms so that researchers and participants can verify the code and environment that processed sensitive data before any output is released.[^16]\textsuperscript{,}[^17]\textsuperscript{,}[^18] The governance layer commits to transparent incident reporting and third-party review of security controls, because long-term scientific credibility depends on demonstrable operational discipline, not only architectural intent.
 
 # XVI. Consent Withdrawal and Lawful Basis
 
-SDRF treats consent as the default basis for human subject research access, but it does not assume consent is the only lawful basis in every jurisdiction or study context. Some research regimes allow processing under statutory research exemptions or public interest grounds, subject to strict safeguards and minimization requirements. SDRF supports this by encoding purpose limitation, retention constraints, and minimum necessary access directly in consent manifests or equivalent authorization records, allowing oversight bodies to verify that non consent use remains constrained to the authorized scope.[^12]\textsuperscript{,}[^13] Where consent is the basis, withdrawal is treated as a revocation of future access, and the system is structured to make that revocation immediate and enforceable at the protocol level.
+SDRF treats consent as the default basis for human-subject research access, but it does not assume consent is the only lawful basis in every jurisdiction or study context. Some research regimes allow processing under statutory research exemptions or public interest grounds, subject to strict safeguards and minimization requirements. SDRF supports this by encoding purpose limitation, retention constraints, and minimum necessary access directly in consent manifests or equivalent authorization records, allowing oversight bodies to verify that non-consent use remains constrained to the authorized scope.[^12]\textsuperscript{,}[^13] Where consent is the basis, withdrawal is treated as a revocation of future access, and the system is structured to make that revocation immediate and enforceable at the protocol level.
 
 # XVII. Related Systems and Differentiators
 
@@ -462,19 +454,19 @@ SDRF is open infrastructure for participant-controlled research.
 
 [^1]: de Montjoye, Y. A., Hidalgo, C. A., Verleysen, M., & Blondel, V. D. (2013). Unique in the Crowd: The privacy bounds of human mobility. *Scientific Reports*, *3*, 1376. https://doi.org/10.1038/srep01376
 
-[^2]: Wang, M., Abbass, H. A., & Hu, J. (2020). BrainPrint: EEG biometric identification based on analyzing brain connectivity graphs. *Pattern Recognition*, *105*, 107381. https://doi.org/10.1016/j.patcog.2020.107381
+[^2]: Wang, M., Abbass, H. A., & Hu, J. (2020). BrainPrint: EEG biometric identification based on analyzing brain connectivity graphs. *Pattern Recognition*, *105*, 107381. https://www.sciencedirect.com/science/article/abs/pii/S0031320320301849
 
-[^3]: Su, F., Xia, L., Cai, A., Wu, Y., & Ma, J. (2010). EEG-based personal identification: From proof-of-concept to a practical system. In *2010 20th International Conference on Pattern Recognition* (pp. 3728-3731). IEEE. https://doi.org/10.1109/ICPR.2010.907
+[^3]: Su, F., Xia, L., Cai, A., Wu, Y., & Ma, J. (2010). EEG-based personal identification: From proof-of-concept to a practical system. In *2010 20th International Conference on Pattern Recognition* (pp. 3728-3731). IEEE. DOI: 10.1109/ICPR.2010.908. https://doi.org/10.1109/ICPR.2010.908
 
 [^4]: Jankowski, C. R., Quatieri, T. F., & Reynolds, D. A. (1995). Measuring fine structure in speech: Application to speaker identification. In *1995 International Conference on Acoustics, Speech, and Signal Processing* (Vol. 1, pp. 325-328). IEEE.
 
-[^5]: Gelfer, M. P., & Mikos, V. A. (2005). The relative contributions of speaking fundamental frequency and formant frequencies to gender identification based on isolated vowels. *Journal of Voice*, *19*(4), 544-554. https://doi.org/10.1016/j.jvoice.2004.10.006
+[^5]: Gelfer, M. P., & Mikos, V. A. (2005). The relative contributions of speaking fundamental frequency and formant frequencies to gender identification based on isolated vowels. *Journal of Voice*, *19*(4), 544-554. https://pubmed.ncbi.nlm.nih.gov/16301101/
 
-[^6]: Gymrek, M., McGuire, A. L., Golan, D., Halperin, E., & Erlich, Y. (2013). Identifying personal genomes by surname inference. *Science*, *339*(6117), 321-324. https://doi.org/10.1126/science.1229566
+[^6]: Gymrek, M., McGuire, A. L., Golan, D., Halperin, E., & Erlich, Y. (2013). Identifying personal genomes by surname inference. *Science*, *339*(6117), 321-324. https://pubmed.ncbi.nlm.nih.gov/23329047/
 
-[^7]: Humbert, M., Ayday, E., Hubaux, J. P., & Telenti, A. (2013). Addressing the concerns of the Lacks family: Quantification of kin genomic privacy. In *Proceedings of the 2013 ACM SIGSAC Conference on Computer & Communications Security* (pp. 1141-1152). https://doi.org/10.1145/2508859.2516707
+[^7]: Humbert, M., Ayday, E., Hubaux, J. P., & Telenti, A. (2013). Addressing the concerns of the Lacks family: Quantification of kin genomic privacy. In *Proceedings of the 2013 ACM SIGSAC Conference on Computer & Communications Security* (pp. 1141-1152). https://infoscience.epfl.ch/entities/publication/87c98700-b805-43df-904b-84ad995a65c4
 
-[^8]: Erlich, Y., Shor, T., Pe'er, I., & Carmi, S. (2018). Identity inference of genomic data using long-range familial searches. *Science*, *362*(6415), 690-694. https://doi.org/10.1126/science.aau4832
+[^8]: Erlich, Y., Shor, T., Pe'er, I., & Carmi, S. (2018). Identity inference of genomic data using long-range familial searches. *Science*, *362*(6415), 690-694. https://pmc.ncbi.nlm.nih.gov/articles/PMC7549546/
 
 [^9]: W3C. *Decentralized Identifiers (DIDs) v1.0*. W3C Recommendation (2022). https://www.w3.org/TR/did-core/
 
@@ -492,7 +484,7 @@ SDRF is open infrastructure for participant-controlled research.
 
 [^16]: Intel. *Intel® Software Guard Extensions (Intel® SGX)*. https://www.intel.com/content/www/us/en/architecture-and-technology/software-guard-extensions.html
 
-[^17]: AMD. *AMD SEV and Confidential Computing*. https://www.amd.com/en/products/processors/server/epyc/epyc-security
+[^17]: AMD. *Confidential Computing with AMD EPYC Processors*. https://www.amd.com/en/products/processors/server/epyc/confidential-computing
 
 [^18]: AWS. *Nitro Enclaves Documentation*. https://docs.aws.amazon.com/enclaves/latest/user/nitro-enclave.html
 
@@ -504,13 +496,13 @@ SDRF is open infrastructure for participant-controlled research.
 
 [^22]: Garmin. *FIT SDK Overview*. https://developer.garmin.com/fit/overview/
 
-[^23]: Shamir, A. (1979). How to Share a Secret. *Communications of the ACM*. https://cacm.acm.org/research/how-to-share-a-secret/
+[^23]: Shamir, A. (1979). How to Share a Secret. *Communications of the ACM*. https://dblp.org/rec/journals/cacm/Shamir79
 
 [^24]: Internet Computer. *How the Internet Computer works* (overview). https://internetcomputer.org/how-it-works
 
-[^25]: Internet Computer. *Canister smart contracts* (developer docs). https://internetcomputer.org/docs/current/developer-docs/smart-contracts/
+[^25]: Internet Computer. *Canisters* (developer docs). https://internetcomputer.org/docs/building-apps/essentials/canisters
 
-[^26]: Internet Computer. *vetKeys* (developer docs). https://internetcomputer.org/docs/current/developer-docs/integrations/vetkeys/
+[^26]: Internet Computer. *vetKeys* (developer docs). https://internetcomputer.org/docs/building-apps/network-features/vetkeys/introduction
 
 [^28]: IETF. *The OAuth 2.0 Authorization Framework (RFC 6749)*. https://datatracker.ietf.org/doc/html/rfc6749
 
@@ -528,4 +520,4 @@ SDRF is open infrastructure for participant-controlled research.
 
 [^35]: Bagdasaryan, E., Veit, A., Hua, Y., Estrin, D., & Shmatikov, V. (2020). *How To Backdoor Federated Learning*. Proceedings of AISTATS. https://proceedings.mlr.press/v108/bagdasaryan20a.html
 
-[^36]: Zhu, L., Liu, Z., & Han, S. (2019). *Deep Leakage from Gradients*. NeurIPS. https://papers.nips.cc/paper/2019/hash/60ee5fe0b0fbbb9c5a9f1e2f2ce0a3a8-Abstract.html
+[^36]: Zhu, L., Liu, Z., & Han, S. (2019). *Deep Leakage from Gradients*. NeurIPS. https://papers.nips.cc/paper/9617-deep-leakage-from-gradients
