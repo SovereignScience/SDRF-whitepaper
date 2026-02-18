@@ -458,19 +458,19 @@ SDRF is open infrastructure for participant-controlled research.
 
 [^3]: Su, F., Xia, L., Cai, A., Wu, Y., & Ma, J. (2010). EEG-based personal identification: From proof-of-concept to a practical system. In *2010 20th International Conference on Pattern Recognition* (pp. 3728-3731). IEEE. DOI: 10.1109/ICPR.2010.908. https://doi.org/10.1109/ICPR.2010.908
 
-[^4]: Jankowski, C. R., Quatieri, T. F., & Reynolds, D. A. (1995). Measuring fine structure in speech: Application to speaker identification. In *1995 International Conference on Acoustics, Speech, and Signal Processing* (Vol. 1, pp. 325-328). IEEE.
+[^4]: Jankowski, C. R., Quatieri, T. F., & Reynolds, D. A. (1995). Measuring fine structure in speech: Application to speaker identification. In *1995 International Conference on Acoustics, Speech, and Signal Processing* (Vol. 1, pp. 325-328). IEEE. https://ieeexplore.ieee.org/document/479539
 
 [^5]: Gelfer, M. P., & Mikos, V. A. (2005). The relative contributions of speaking fundamental frequency and formant frequencies to gender identification based on isolated vowels. *Journal of Voice*, *19*(4), 544-554. https://pubmed.ncbi.nlm.nih.gov/16301101/
 
 [^6]: Gymrek, M., McGuire, A. L., Golan, D., Halperin, E., & Erlich, Y. (2013). Identifying personal genomes by surname inference. *Science*, *339*(6117), 321-324. https://pubmed.ncbi.nlm.nih.gov/23329047/
 
-[^7]: Humbert, M., Ayday, E., Hubaux, J. P., & Telenti, A. (2013). Addressing the concerns of the Lacks family: Quantification of kin genomic privacy. In *Proceedings of the 2013 ACM SIGSAC Conference on Computer & Communications Security* (pp. 1141-1152). https://infoscience.epfl.ch/entities/publication/87c98700-b805-43df-904b-84ad995a65c4
+[^7]: Humbert, M., Ayday, E., Hubaux, J. P., & Telenti, A. (2013). Addressing the concerns of the Lacks family: Quantification of kin genomic privacy. In *Proceedings of the 2013 ACM SIGSAC Conference on Computer & Communications Security* (pp. 1141-1152). https://doi.org/10.1145/2508859.2516707
 
 [^8]: Erlich, Y., Shor, T., Pe'er, I., & Carmi, S. (2018). Identity inference of genomic data using long-range familial searches. *Science*, *362*(6415), 690-694. https://pmc.ncbi.nlm.nih.gov/articles/PMC7549546/
 
-[^9]: W3C. *Decentralized Identifiers (DIDs) v1.0*. W3C Recommendation (2022). https://www.w3.org/TR/did-core/
+[^9]: W3C. *Decentralized Identifiers (DIDs) v1.0*. W3C Recommendation (2022). https://www.w3.org/TR/did-1.0/
 
-[^10]: W3C. *Verifiable Credentials Data Model v2.0*. W3C Recommendation (2025). https://www.w3.org/TR/vc-data-model/
+[^10]: W3C. *Verifiable Credentials Data Model v2.0*. W3C Recommendation (2025). https://www.w3.org/TR/vc-data-model-2.0/
 
 [^11]: HL7. *FHIR Specification*. https://hl7.org/fhir/
 
@@ -482,7 +482,7 @@ SDRF is open infrastructure for participant-controlled research.
 
 [^15]: McMahan, B., Moore, E., Ramage, D., Hampson, S., & Agüera y Arcas, B. (2017). Communication-Efficient Learning of Deep Networks from Decentralized Data. *AISTATS*. https://proceedings.mlr.press/v54/mcmahan17a.html
 
-[^16]: Intel. *Intel® Software Guard Extensions (Intel® SGX)*. https://www.intel.com/content/www/us/en/architecture-and-technology/software-guard-extensions.html
+[^16]: Intel. *Intel® Software Guard Extensions (Intel® SGX)*. https://www.intel.com/content/www/us/en/developer/tools/software-guard-extensions/overview.html
 
 [^17]: AMD. *AMD Infinity Guard (includes Secure Encrypted Virtualization)*. https://www.amd.com/en/products/processors/server/epyc/infinity-guard.html
 
@@ -496,17 +496,17 @@ SDRF is open infrastructure for participant-controlled research.
 
 [^22]: Garmin. *FIT SDK Overview*. https://developer.garmin.com/fit/overview/
 
-[^23]: Shamir, A. (1979). How to Share a Secret. *Communications of the ACM*. https://dblp.org/rec/journals/cacm/Shamir79
+[^23]: Shamir, A. (1979). How to Share a Secret. *Communications of the ACM*. https://doi.org/10.1145/359168.359176
 
-[^24]: Internet Computer. *How the Internet Computer works* (overview). https://internetcomputer.org/how-it-works
+[^24]: Internet Computer. *Network architecture* (overview). https://docs.internetcomputer.org/building-apps/essentials/network-overview
 
-[^25]: Internet Computer. *Canisters* (developer docs). https://internetcomputer.org/docs/building-apps/essentials/canisters
+[^25]: Internet Computer. *Canisters* (developer docs). https://docs.internetcomputer.org/building-apps/essentials/canisters
 
-[^26]: Internet Computer. *vetKeys* (developer docs). https://internetcomputer.org/docs/building-apps/network-features/vetkeys/introduction
+[^26]: Internet Computer. *vetKeys* (developer docs). https://docs.internetcomputer.org/building-apps/network-features/vetkeys/introduction
 
 [^28]: IETF. *The OAuth 2.0 Authorization Framework (RFC 6749)*. https://datatracker.ietf.org/doc/html/rfc6749
 
-[^29]: Solid Project. *Frequently Asked Questions*. https://solidproject.org/faqs
+[^29]: Solid Project. *Frequently Asked Questions*. https://solidproject.org/faq
 
 [^30]: Decentralized Identity Foundation. *Decentralized Web Node (DWN) Specification* (Draft). https://identity.foundation/decentralized-web-node/spec/
 
@@ -516,7 +516,7 @@ SDRF is open infrastructure for participant-controlled research.
 
 [^33]: Shokri, R., Stronati, M., Song, C., & Shmatikov, V. (2017). *Membership Inference Attacks against Machine Learning Models*. IEEE Symposium on Security and Privacy. https://arxiv.org/abs/1610.05820
 
-[^34]: Fredrikson, M., Jha, S., & Ristenpart, T. (2015). *Model Inversion Attacks that Exploit Confidence Information and Basic Countermeasures*. Proceedings of the 22nd ACM SIGSAC Conference on Computer and Communications Security. https://dblp.org/rec/conf/ccs/FredriksonJR15
+[^34]: Fredrikson, M., Jha, S., & Ristenpart, T. (2015). *Model Inversion Attacks that Exploit Confidence Information and Basic Countermeasures*. Proceedings of the 22nd ACM SIGSAC Conference on Computer and Communications Security. https://doi.org/10.1145/2810103.2813677
 
 [^35]: Bagdasaryan, E., Veit, A., Hua, Y., Estrin, D., & Shmatikov, V. (2020). *How To Backdoor Federated Learning*. Proceedings of AISTATS. https://proceedings.mlr.press/v108/bagdasaryan20a.html
 
